@@ -227,22 +227,3 @@ def timer_trigger_caged_ftp(myTimer: func.TimerRequest) -> None:
     main_workflow()
     logging.info("Finished!")
 
-
-
-
-    
-
-
-
-
-
-
-
-@app.timer_trigger(schedule="0 */60 * * * *", arg_name="myTimer", run_on_startup=True,
-              use_monitor=False) 
-def timer_trigger_caged(myTimer: func.TimerRequest) -> None:
-    
-    if myTimer.past_due:
-        logging.info('The timer is past due!')
-
-    logging.info('Python timer trigger function executed.')
